@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg3725"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="graphics.svg"
+   inkscape:export-filename="C:\Users\Nim\Desktop\articles\in-order-pre-order-post-order\img\tree.png"
+   inkscape:export-xdpi="49.283848"
+   inkscape:export-ydpi="49.283848">
+  <defs
+     id="defs3719" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="-531.28427"
+     inkscape:cy="941.3654"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="986"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3722">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g4571"
+       style="stroke:#8b8b8b;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Nim\Desktop\articles\in-order-pre-order-post-order\img\tree.png"
+       inkscape:export-xdpi="46.11787"
+       inkscape:export-ydpi="46.11787">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4546"
+         d="m -176.74166,94.064583 c 11.33082,-8.392583 19.18184,-24.175746 25.66458,-32.279166"
+         style="fill:none;stroke:#8b8b8b;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4550"
+         d="m -141.81666,59.404167 c 2.74165,14.056453 13.73096,23.529668 22.48958,29.36875"
+         style="fill:none;stroke:#8b8b8b;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4552"
+         d="m -142.875,53.583334 c 9.83048,-7.361399 15.87122,-23.281439 26.45833,-28.575"
+         style="fill:none;stroke:#8b8b8b;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4554"
+         d="m -104.775,23.420834 c 10.709197,9.871911 25.697938,14.12298 30.162501,27.516667"
+         style="fill:none;stroke:#8b8b8b;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g4565"
+       style="fill:#999999;fill-opacity:1"
+       inkscape:export-filename="C:\Users\Nim\Desktop\articles\in-order-pre-order-post-order\img\tree.png"
+       inkscape:export-xdpi="46.11787"
+       inkscape:export-ydpi="46.11787">
+      <circle
+         r="10"
+         style="stroke-width:0.26458332;fill:#999999;fill-opacity:1"
+         cy="56.229168"
+         cx="-146.27678"
+         id="path3727" />
+      <circle
+         id="circle3729"
+         cx="-110.936"
+         cy="17.675594"
+         style="stroke-width:0.26458332;fill:#999999;fill-opacity:1"
+         r="10" />
+      <circle
+         r="10"
+         style="stroke-width:0.26458332;fill:#999999;fill-opacity:1"
+         cy="56.229168"
+         cx="-75.59523"
+         id="circle3731" />
+      <circle
+         id="circle3733"
+         cx="-178.02678"
+         cy="93.875595"
+         style="stroke-width:0.26458332;fill:#999999;fill-opacity:1"
+         r="10" />
+      <circle
+         r="10"
+         style="stroke-width:0.26458332;fill:#999999;fill-opacity:1"
+         cy="93.875595"
+         cx="-116.41666"
+         id="circle3735" />
+    </g>
+    <path
+       style="fill:none;stroke:#23b654;stroke-width:0.84403068;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -144.97139,38.637753 c -28.36968,-8.04e-4 -53.15556,37.38435 -53.55453,63.547057 -0.1653,12.18929 100.392537,16.46321 102.970732,3.92435 -4.031393,-22.631874 -10.416352,-61.997208 -49.416202,-67.471407 z"
+       id="path3739"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="C:\Users\Nim\Desktop\articles\in-order-pre-order-post-order\img\tree.png"
+       inkscape:export-xdpi="46.11787"
+       inkscape:export-ydpi="46.11787" />
+    <path
+       style="fill:none;stroke:#23b654;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -106.3625,1.1958346 c -23.76426,-4.9300933 -26.95834,32.5437494 -4.23333,32.5437494 5.12453,0.575093 11.972136,-2.624798 14.022915,-6.35 6.037008,-12.074015 -0.945066,-23.245577 -9.789585,-26.1937494 z"
+       id="path4556"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="C:\Users\Nim\Desktop\articles\in-order-pre-order-post-order\img\tree.png"
+       inkscape:export-xdpi="46.11787"
+       inkscape:export-ydpi="46.11787" />
+    <path
+       sodipodi:nodetypes="cccc"
+       inkscape:connector-curvature="0"
+       id="path4558"
+       d="m -63.497737,46.163975 c -16.747336,-17.566235 -40.679533,11.446538 -21.984315,24.366094 3.888854,3.386495 11.341377,4.647017 15.146335,2.748302 11.830758,-6.500806 12.438028,-19.660759 6.83798,-27.114396 z"
+       style="fill:none;stroke:#23b654;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Nim\Desktop\articles\in-order-pre-order-post-order\img\tree.png"
+       inkscape:export-xdpi="46.11787"
+       inkscape:export-ydpi="46.11787" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.46666622px;line-height:1.25;font-family:Consolas;-inkscape-font-specification:Consolas;letter-spacing:0px;word-spacing:0px;fill:#23b654;fill-opacity:0.98823529;stroke:none;stroke-width:0.26458332"
+       x="-83.872932"
+       y="33.474998"
+       id="text4577"
+       inkscape:export-filename="C:\Users\Nim\Desktop\articles\in-order-pre-order-post-order\img\tree.png"
+       inkscape:export-xdpi="46.11787"
+       inkscape:export-ydpi="46.11787"><tspan
+         sodipodi:role="line"
+         x="-83.872932"
+         y="33.474998"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.46666622px;font-family:Consolas;-inkscape-font-specification:Consolas;fill:#23b654;fill-opacity:0.98823529;stroke-width:0.26458332"
+         id="tspan4587">right sub-tree</tspan></text>
+    <text
+       id="text4581"
+       y="33.210419"
+       x="-194.20416"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.46666622px;line-height:1.25;font-family:Consolas;-inkscape-font-specification:Consolas;letter-spacing:0px;word-spacing:0px;fill:#23b654;fill-opacity:0.98823529;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"
+       inkscape:export-filename="C:\Users\Nim\Desktop\articles\in-order-pre-order-post-order\img\tree.png"
+       inkscape:export-xdpi="46.11787"
+       inkscape:export-ydpi="46.11787"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.46666622px;font-family:Consolas;-inkscape-font-specification:Consolas;fill:#23b654;fill-opacity:0.98823529;stroke-width:0.26458332"
+         y="33.210419"
+         x="-194.20416"
+         id="tspan4579"
+         sodipodi:role="line">left sub-tree</tspan></text>
+    <text
+       id="text4585"
+       y="-6.7416654"
+       x="-130.43959"
+       style="font-style:normal;font-weight:normal;font-size:8.46666667px;line-height:1.25;font-family:Consolas;letter-spacing:0px;word-spacing:0px;fill:#23b654;fill-opacity:0.98823529;stroke:none;stroke-width:0.26458332;-inkscape-font-specification:Consolas;font-stretch:normal;font-variant:normal;"
+       xml:space="preserve"
+       inkscape:export-filename="C:\Users\Nim\Desktop\articles\in-order-pre-order-post-order\img\tree.png"
+       inkscape:export-xdpi="46.11787"
+       inkscape:export-ydpi="46.11787"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Consolas;-inkscape-font-specification:Consolas;fill:#23b654;fill-opacity:0.98823529;stroke-width:0.26458332;font-size:8.46666667px;"
+         y="-6.7416654"
+         x="-130.43959"
+         id="tspan4583"
+         sodipodi:role="line">root node</tspan></text>
+  </g>
+</svg>

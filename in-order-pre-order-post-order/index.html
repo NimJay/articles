@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="../favicon.png" type="image/png">
+	<link rel="icon" href="../favicon.png" type="image/png">
+
+	<title>In-order, Pre-order, Post-order</title>
+	<link rel="stylesheet" href="../css/easy.css" />
+	<link rel="stylesheet" href="../css/easy-theme-default.css" />
+	<style type="text/css">
+		footer {
+			font-size: 14px;
+			margin-top: 50px;
+			padding-bottom: 15px;
+			background-color: rgb(100, 180, 110);
+			color: white;
+		}
+		footer a {
+			color: white;
+		}
+		strong {
+			font-weight: normal;
+			color: rgb(100, 170, 110);
+		}
+	</style>
+</head>
+<body>
+<main>
+
+
+<header class="e-block e-row">
+<div class="e-col-1">
+<h1>In-order, Pre-order, Post-order</h1>
+<p>In-order, pre-order, and post-order are different ways of traversing (visiting each node of) a binary tree.</p>
+<div style="text-align: center;margin: 30px 0 20px 0;" >
+<img src="./img/tree.png" />
+</div>
+</div>
+</header>
+
+
+<section class="e-block e-row">
+
+<div class="e-col-1-3">
+<h2>In-order</h2>
+<ol>
+	<li>visit <strong>left sub-tree</strong></li>
+	<li>visit <strong>root node</strong></li>
+	<li>visit <strong>right sub-tree</strong></li>
+</ol>
+</div><!--
+
+--><div class="e-col-1-3">
+<h2>Pre-order</h2>
+<ol>
+	<li>visit <strong>root node</strong></li>
+	<li>visit <strong>left sub-tree</strong></li>
+	<li>visit <strong>right sub-tree</strong></li>
+</ol>
+</div><!--
+
+--><div class="e-col-1-3">
+<h2>Post-order</h2>
+<ol>
+	<li>visit <strong>left sub-tree</strong></li>
+	<li>visit <strong>right sub-tree</strong></li>
+	<li>visit <strong>root node</strong></li>
+</ol>
+</div>
+
+<div class="e-col-1">
+<h2>How to Memorize</h2>
+<p>
+One way to remember the order each type of traversal is to notice that "in", "pre", and "post" are in reference to when the root node is visited.
+</p>
+<table cellspacing=0>
+<tbody>
+<tr>
+	<td><strong>in</strong></td>
+	<td>root node in the middle</td>
+</tr>
+<tr>
+	<td><strong>pre</strong></td>
+	<td>root node first</td>
+</tr>
+<tr>
+	<td><strong>post</strong></td>
+	<td>root node last</td>
+</tr>
+</tbody>
+</table>
+<p>In all three of the above case, the left sub-tree is traversed before the right sub-tree.</p>
+
+<h2>Out-order</h2>
+<p>Out-order is simply the reverse of in-order:</p>
+<ol>
+	<li>visit <strong>right sub-tree</strong></li>
+	<li>visit <strong>root node</strong></li>
+	<li>visit <strong>left sub-tree</strong></li>
+</ol>
+
+</div>
+</section>
+
+
+<footer class="e-block">
+<div class="e-row">
+<div class="e-col-1">
+<p>
+Found an issue or got suggestions?
+Please let me know on <a href="https://twitter.com/IAmNimJay" target="_blank">Twitter</a> or <a href="https://github.com/NimJay" target="_blank">GitHub</a>.
+</p>
+</div>
+</div>
+</footer>
+
+</main>
+</body>
