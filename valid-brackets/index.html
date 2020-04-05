@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+
+	<!-- Mobile Browser Toolbar Color -->
+	<!-- Chrome, Firefox OS and Opera --><meta name="theme-color" content="#fffff0">
+	<!-- Windows Phone --><meta name="msapplication-navbutton-color" content="#fffff0">
+	<!-- iOS Safari --><meta name="apple-mobile-web-app-status-bar-style" content="#fffff0">
+
+	<!-- favicon.png -->
+	<link rel="shortcut icon" href="../favicon.png" type="image/png">
+	<link rel="icon" href="../favicon.png" type="image/png">
+
+	<title>Valid Brackets</title>
+	<meta name="description" content="An algorithm for validating brackets in a string.">
+	<meta name="author" content="Nim Jayawardena">
+
+	<link rel="stylesheet" href="../css/easy.css" />
+	<link rel="stylesheet" href="../css/easy-theme-default.css" />
+	<style type="text/css">
+		body {
+			font-family: Microsoft Sans Serif, Roboto, Tahoma;
+			font-size: 17px;
+			background-color: white;
+		}
+		pre {
+			font-size: 14px;
+			line-height: 1.5em;
+		}
+		h1, h2, h3 {
+			display: inline-block;
+			border-bottom: solid 2px black;
+		}
+		header {
+			text-align: center;
+		}
+		footer {
+			font-size: 14px;
+			margin-top: 50px;
+			padding-bottom: 15px;
+			background-color: rgb(120, 170, 255);
+			color: white;
+		}
+		footer a {
+			color: white;
+		}
+		code .code-comment {
+			color: rgb(120, 170, 255);
+		}
+	</style>
+</head>
+<body>
+<main>
+
+
+<header class="e-block e-row">
+<div class="e-col-1">
+<img src="./img/three-bracket-faces.png" style="display: block;max-width: 100%; margin: 30px auto;">
+<h1>Valid Brackets</h1>
+</div>
+</header>
+
+
+<section class="e-block e-row">
+<div class="e-col-1">
+
+<h2>The Problem</h2>
+<p>
+Given a string, check that its brackets open and close in a valid manner.
+<ul>
+	<li>Return <code>true</code> if the string is valid, and <code>false</code> if it's invalid.</li>
+	<li>The string may be empty.</li>
+	<li>Opening brackets: <code>(</code>, <code>{</code>, and <code>[</code>.</li>
+	<li>Closing brackets: <code>)</code>, <code>}</code>, and <code>]</code>.</li>
+</ul>
+</p>
+
+
+<h2>Examples</h2>
+<p>Here are some test cases you can try out as input:</p>
+<table style="text-align: center;" cellspacing=0>
+<thead>
+<tr>
+	<th>Input</th>
+	<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>""</code></td>
+	<td><code>true</code></td>
+</tr>
+<tr>
+	<td><code>"(abc)"</code></td>
+	<td><code>true</code></td>
+</tr>
+<tr>
+	<td><code>"a(a)[a{a}]"</code></td>
+	<td><code>true</code></td>
+</tr>
+<tr>
+	<td><code>"a(a]a"</code></td>
+	<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>Solution</h2>
+<p>
+The solution presented in this article has a runtime complexity of <strong>O(n)</strong> and a space complexity of <strong>O(n)</strong>.
+</p>
+<p>
+This solution loops through each character of the given string, while maintaining a Stack of opening brackets. When the loop encounters:
+</p>
+<ul>
+<li>an opening bracket, the bracket is pushed into the Stack.</li>
+<li>a closing bracket, the previous opening bracket is popped from the Stack (and checked to see if matching).</li>
+</ul>
+<h3>Pseudocode</h3>
+<pre><code>------------------------------------------
+Input: string
+------------------------------------------
+
+opening_bracket_stack = new stack
+
+for each character in the string
+    if the character is an opening bracket
+        push character into opening_bracket_stack
+    if the character is a closing bracket
+        opening_bracket = pop from opening_bracket_stack
+        if character and opening_bracket are not the same bracket type
+            return false
+
+return true if opening_bracket_stack is empty, return false otherwise</code></pre>
+
+<h3>JavaScript Solution</h3>
+<pre><code>function isValidBrackets(string) {
+    var openBrackStack = [];
+
+    <span class="code-comment">// Go through each character...</span>
+    for (let i = 0; i < string.length; i++) {
+        var currChar = string[i];
+
+        <span class="code-comment">// Opening Bracket</span>
+        if (isOpeningBracket(currChar)) {
+            openBrackStack.push(currChar);
+
+        <span class="code-comment">// Closing Bracket</span>
+        } else if (isClosingBracket(currChar)) {
+            var prevOpening = openBrackStack.pop();
+            if (!prevOpening || !isSameBracketType(prevOpening, currChar)) {
+                return false;
+            }
+        }
+    }
+
+    return openBrackStack.length === 0;
+}
+
+<span class="code-comment">/* ----- Helper Methods ----- */</span>
+
+function isOpeningBracket(bracket) {
+    return ["(", "[", "{"].indexOf(bracket) > -1;
+}
+
+function isClosingBracket(bracket) {
+    return [")", "]", "}"].indexOf(bracket) > -1;
+}
+
+function isSameBracketType(opening, closing) {
+    return (opening === "{" && closing === "}")
+        || (opening === "(" && closing === ")")
+        || (opening === "[" && closing === "]");
+}</code></pre>
+
+</div>
+</section>
+
+
+<footer class="e-block">
+<div class="e-row">
+<div class="e-col-1">
+<p>
+Found an issue or got suggestions?
+Please let me know on <a href="https://twitter.com/IAmNimJay" target="_blank">Twitter</a> or <a href="https://github.com/NimJay" target="_blank">GitHub</a>.
+</p>
+</div>
+</div>
+</footer>
+
+</main>
+</body>
