@@ -1,0 +1,140 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+body, input, textarea {
+    font-size: 16px;
+    line-height: 1.6em;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+/* ----- Headings -----*/
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    line-height: 1.2em;
+}
+h1 {
+    margin-top: 40px;
+}
+h2 {
+    margin-top: 35px;
+}
+h3 {
+    margin-top: 30px;
+}
+
+
+p, table, ul, ol {
+    margin: 15px 0 0 0;
+}
+
+ul, ol {
+    padding-left: 21px;
+}
+
+table th {
+    font-weight: normal;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+table td {
+    padding: 15px 10px;
+}
+
+
+/* ----- Code -----*/
+
+code {
+    padding: 0px 0.3em;
+}
+pre {
+    padding: 10px;
+    overflow-x: scroll;
+}
+pre > code {
+    padding: 0;
+}
+
+
+/* ----- Forms ----- */
+
+input, button {
+    border: none;
+    outline: none;
+}
+
+label.e-textbox, label.e-textarea {
+    margin-top: 30px;
+}
+
+label.e-textbox {
+    font-size: 12px;
+    /* line-height: 0px; */
+}
+label.e-textbox > input {
+    width: 100%;
+    max-width: 350px;
+    padding: 2px 0px 11px 0;
+    display: block;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+}
+label.e-textbox > input:focus {
+    padding-bottom: 10px;
+    border-bottom: solid 2px rgba(150, 255, 150);
+}
+
+label.e-textarea {
+    display: block;
+    font-size: 12px;
+    /* line-height: 0; */
+}
+label.e-textarea > textarea {
+    width: 100%;
+    padding: 0px 10px;
+    border: none;
+    border-left: solid 1px rgba(0, 0, 0, 0.2);
+    line-height: 1.4em;
+}
+label.e-textarea > textarea:focus {
+    padding-left: 9px;
+    border-left: solid 2px rgba(150, 255, 150);
+}
+
+
+.e-button {
+    padding: 10px; 
+    cursor: pointer;
+}
+
+
+/* ----- Grid System ----- */
+
+.e-block {
+
+}
+.e-row {max-width: 750px;margin: auto;}
+
+.e-col-1, .e-col-1-2, .e-col-1-3, .e-col-2-3, .e-col-1-4, .e-col-3-4 {
+    display: inline-block;
+    padding: 0px 10px;
+    vertical-align: top;
+}
+.e-col-1 {width: 100%;}
+.e-col-1-2 {width: 50%;}
+.e-col-1-3 {width: 33%;}
+.e-col-2-3 {width: 66%;}
+.e-col-1-4 {width: 25%;}
+.e-col-3-4 {width: 75%;}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .e-col-1, .e-col-1-2, .e-col-1-3, .e-col-2-3, .e-col-1-4, .e-col-3-4 {
+        width: 100%;
+    }
+}

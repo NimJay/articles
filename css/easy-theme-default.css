@@ -1,0 +1,33 @@
+body, input, textarea {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+.e-button {
+    color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(100, 200, 255, 1);
+}
+
+
+/* Code */
+
+code {
+    padding: 0px 0.3em;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+pre > code {
+    background-color: rgba(0, 0, 0, 0);
+}
+pre {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+code .e-code-comment {
+    /* color: rgb(100, 150, 100); */
+    color: rgb(150, 150, 150);
+}
