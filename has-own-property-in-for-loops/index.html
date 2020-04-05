@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="../favicon.png" type="image/png">
+	<link rel="icon" href="../favicon.png" type="image/png">
+	<title>hasOwnProperty in for Loops</title>
+	<link rel="stylesheet" href="../css/easy.css" />
+	<link rel="stylesheet" href="../css/easy-theme-default.css" />
+	<style type="text/css">
+		footer {
+			font-size: 14px;
+			margin-top: 50px;
+			padding-bottom: 15px;
+			background-color: black;
+			color: white;
+		}
+		footer a {
+			color: rgb(100, 150, 100);
+		}
+	</style>
+</head>
+<body>
+<main>
+
+<header class="e-block e-row">
+<div class="e-col-1">
+<h1>hasOwnProperty in for Loops</h1>
+<p>Have you ever seen <code>hasOwnProperty</code> being used inside a JavaScript <code>for</code> loop like so:</p>
+<pre><code>for (var key in myObject) {
+  if (myObject.hasOwnProperty(key)) {
+    <span class="e-code-comment">// Do something...</span>
+  }
+}</code></pre>
+</div>
+</header>
+
+<section class="e-block e-row">
+<div class="e-col-1">
+<h2>Why do it?</h2>
+<p>
+Let's see why you would want to do such a thing...
+</p>
+<p>
+Imagine you add a method to the global Object prototype.
+</p>
+<pre><code>Object.prototype.myMethod = function () {
+  <span class="e-code-comment">// Some code...</span>
+};</code></pre>
+<p>
+Now, any object that you create will contain that method.
+</p>
+<pre><code>var myObject = {};
+myObject.myMethod(); <span class="e-code-comment">// This would work!</span></code></pre>
+<p>
+However, this also means that <code>myMethod</code> will be one of the keys that you loop through when you use <code>for (var key in myObject)</code>.
+This is usually undesirable.
+To get around this, we can use the <code>Object.defineProperty</code> function:
+</p>
+<pre><code>Object.defineProperty(Object.prototype, 'myMethod', { enumerable: false });</code></pre>
+<p>
+The <code>{ enumerable: false }</code> parameter ensures that <code>for</code> loops ignore <code>myMethod</code>.
+However, in case someone on your team or a dependency forgets to use the above <code>Object.defineProperty</code> code, we can use <code>hasOwnProperty</code> inside our <code>for</code> loop to skip <code>myMethod</code>.
+<code>hasOwnProperty</code> checks if a key exists and is not inherited (from the prototype).
+</p>
+<p>
+In other words, we use <code>hasOwnProperty</code> to ignore any keys that were inherited from the prototype.
+</p>
+<pre><code>for (var key in myObject) {
+  if (myObject.hasOwnProperty(key)) {
+    <span class="e-code-comment">// myMethod will not make it here...</span>
+  }
+}</code></pre>
+</div>
+</section>
+
+<section class="e-block e-row">
+<div class="e-col-1">
+<h2>Alternatives</h2>
+<h3>Alternative 1</h3>
+<pre><code>Object.keys(myObject).forEach(function (key) {
+  <span class="e-code-comment">// Do something...</span>
+});</code></pre>
+<p>The <code>Object.keys</code> method will return a list of all the keys, ignoring any keys inherited from the prototype.</p>
+<h3>Alternative 2</h3>
+<pre><code>for (var key in myObject) {
+  if (!myObject.hasOwnProperty(key)) {
+    continue;
+  }
+  <span class="e-code-comment">// Do something...</span>
+}</code></pre>
+<p>
+In the above case, we first check if the key is <em>not</em> inherited, and then skip the iteration using <code>continue;</code>.
+This is nice because you don't have to nest (indent) the code inside the loop (<code><span class="e-code-comment">// Do something...</span></code>).
+This is my personal favourite.
+</p>
+<h3>Alternative 3</h3>
+<pre><code>for (var key in myObject) { if (!myObject.hasOwnProperty(key)) { continue; }
+  <span class="e-code-comment">// Do something...</span>
+}</code></pre>
+<p>
+The above is great if you're a fan of one-liners. Note: This may not be very readable.
+</p>
+</div>
+</section>
+
+<footer class="e-block">
+<div class="e-row">
+<div class="e-col-1">
+<p>
+Found an issue or got suggestions? Please let me know on <a href="https://twitter.com/IAmNimJay" target="_blank">Twitter</a> or <a href="https://github.com/NimJay" target="_blank">GitHub</a>.
+</p>
+</div>
+</div>
+</footer>
+
+</main>
+</body>
