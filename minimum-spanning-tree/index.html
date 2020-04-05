@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+
+	<!-- Mobile Browser Toolbar Color -->
+	<!-- Chrome, Firefox OS and Opera --><meta name="theme-color" content="#5cb358">
+	<!-- Windows Phone --><meta name="msapplication-navbutton-color" content="#5cb358">
+	<!-- iOS Safari --><meta name="apple-mobile-web-app-status-bar-style" content="#5cb358">
+
+	<!-- favicon.png -->
+	<link rel="shortcut icon" href="../favicon.png" type="image/png">
+	<link rel="icon" href="../favicon.png" type="image/png">
+
+	<title>Minimum Spanning Tree</title>
+	<meta name="description" content="A short explanation of minimum spanning trees, using examples.">
+	<meta name="author" content="Nim Jayawardena">
+
+	<link rel="stylesheet" href="../css/easy.css" />
+	<link rel="stylesheet" href="../css/easy-theme-default.css" />
+	<style type="text/css">
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 19px;
+			line-height: 1.8em;
+			background-color: white;
+		}
+		pre {
+			font-size: 14px;
+			line-height: 1.5em;
+		}
+		h1, h2, h3 {
+			display: inline-block;
+		}
+		h1 { font-size: 30px; }
+		footer {
+			font-size: 14px;
+			margin-top: 50px;
+			padding-bottom: 15px;
+			background-color: black;
+			color: white;
+		}
+		footer a {
+			color: white;
+		}
+		code .code-comment {
+			color: rgb(120, 170, 255);
+		}
+		img {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+<main>
+
+<div class="e-block e-row">
+<div class="e-col-1">
+<h1>What is a Minimum Spanning Tree?</h1>
+<p>A minimum spanning tree of a graph is a sub-graph that contains all vertices, and has exactly one path from any one vertex to another.</p>
+<p>Let's first explore some <strong>spanning trees</strong>.</p>
+<p>Take a look at this graph...</p>
+<img src="img/tree.png" style="margin: auto;" alt="A tree with 3 vertices, and 3 edges. There is one edge between each pair of vertices. The weights of the edges are 1, 2, and 3.">
+<p>
+In this graph, there are 2 paths we can take to get from any vertex to any other vertex.
+That is, we can either take one edge, or go through the third vertex and take two edges.
+<p>
+</p>
+But let's say we don't want this redundancy and we just want exactly one path of edges between any two vertices.
+To achieve this, we can remove any one of the three edges.
+</p>
+</div>
+</div>
+
+<div style="display: flex;justify-content: space-around;flex-wrap: wrap;padding: 0px 10px;">
+<img src="img/spanning-tree-no-1.png" style="max-width: 100%;margin-top: 40px;" alt="A spanning tree, consisting of all edges from the original graph except for the edge with weight 1.">
+<img src="img/spanning-tree-no-2.png" style="max-width: 100%;margin-top: 40px;" alt="A spanning tree, consisting of all edges from the original graph except for the edge with weight 2.">
+<img src="img/spanning-tree-no-3.png" style="max-width: 100%;margin-top: 40px;" alt="A spanning tree, consisting of all edges from the original graph except for the edge with weight 3.">
+</div>
+
+<div class="e-block e-row" style="margin-top: 30px;">
+<div class="e-col-1">
+<p>
+These are all <strong>spanning trees</strong>.
+There is exactly <strong>one path from a vertex to another vertex</strong> (it's a tree), and all the </strong>original vertices are included</strong> (it's spanning).
+</p>
+<p>
+But out of these three spanning trees, there is one with <strong>the lowest total edge weight</strong> &mdash; the tree without the edge of weight 3.
+It has a total edge weight of 3 (1 + 2).
+This is the <strong>minimum spanning tree</strong>.
+</p>
+<img src="img/spanning-tree-no-3.png" style="margin: auto;margin-top: 20px;" alt="The minimum spanning tree consisting of the edges of weight 1 and 2.">
+<p>
+In this case there was exactly one minimum spanning tree.
+But in other graphs, there may be multiple minimum spanning trees.
+</p>
+</div>
+</div>
+
+<footer class="e-block">
+<div class="e-row">
+<div class="e-col-1">
+<p>
+Found an issue or got suggestions?
+Please let me know on <a href="https://twitter.com/IAmNimJay" target="_blank">Twitter</a> or <a href="https://github.com/NimJay/articles" target="_blank">GitHub</a>.
+</p>
+</div>
+</div>
+</footer>
+
+</main>
+</body>
+</html>
