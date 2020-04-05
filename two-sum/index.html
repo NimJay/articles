@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+
+	<!-- Mobile Browser Toolbar Color -->
+	<!-- Chrome, Firefox OS and Opera --><meta name="theme-color" content="#fffff0">
+	<!-- Windows Phone --><meta name="msapplication-navbutton-color" content="#fffff0">
+	<!-- iOS Safari --><meta name="apple-mobile-web-app-status-bar-style" content="#fffff0">
+
+	<!-- favicon.png -->
+	<link rel="shortcut icon" href="../favicon.png" type="image/png">
+	<link rel="icon" href="../favicon.png" type="image/png">
+
+	<title>Two Sum</title>
+	<meta name="description" content="An optimal solution to Two Sum, a popular computer science interview problem.">
+	<meta name="author" content="Nim Jayawardena">
+
+	<link rel="stylesheet" href="../css/easy.css" />
+	<link rel="stylesheet" href="../css/easy-theme-default.css" />
+	<style type="text/css">
+		body {
+			font-family: Microsoft Sans Serif, Roboto, Tahoma;
+			background-color: rgb(255, 255, 240);
+		}
+		pre {
+			font-size: 14px;
+			line-height: 1.5em;
+		}
+		h1, h2, h3 {
+			display: inline-block;
+			border-bottom: solid 1px rgb(240, 90, 130);
+		}
+		footer {
+			font-size: 14px;
+			margin-top: 50px;
+			padding-bottom: 15px;
+			background-color: rgb(240, 90, 130);
+			color: white;
+		}
+		footer a {
+			color: white;
+		}
+		code .code-comment {
+			color: rgb(240, 90, 130);
+		}
+	</style>
+</head>
+<body>
+<main>
+
+
+<header class="e-block e-row">
+<div class="e-col-1">
+<img src="./img/three-piles.png" style="display: block;max-width: 100%; margin: 30px auto;">
+<h1>Two Sum</h1>
+</div>
+</header>
+
+
+<section class="e-block e-row">
+<div class="e-col-1">
+
+<h2>The Problem</h2>
+<p>
+Given a list of numbers and a target number, find two numbers in the list that sum up to the target.
+<ul>
+	<li>Return a tuple/array/set containing the two numbers (e.g. <code>[2, 4]</code>).</li>
+	<li>The index of the returned numbers must be different.</li>
+	<li>If there is no sum, return null or throw an error.</li>
+</ul>
+</p>
+
+
+<h2>Examples</h2>
+<p>Here are some test cases you can try out as input:</p>
+<table style="text-align: center;" cellspacing=0>
+<thead>
+<tr>
+	<th>Input</th>
+	<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>[ 1, 2, 3 ], 5</code></td>
+	<td><code>(2, 3)</code></td>
+</tr>
+<tr>
+	<td><code>[ 5, 4, 6 ], 10</code></td>
+	<td><code>(4, 6)</code></td>
+</tr>
+<tr>
+	<td><code>[ 5, 5, 3 ], 10</code></td>
+	<td><code>(5, 5)</code></td>
+</tr>
+<tr>
+	<td><code>[ 1, 2, 3 ], 10</code></td>
+	<td><code>null</code> or throw an <code>error</code></td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>Solution</h2>
+<p>
+The solution presented in this article has a runtime complexity of <strong>O(n)</strong> and a space complexity of <strong>O(n)</strong>.
+Of course, there are many other solutions that are just as good.
+</p>
+<p>
+This solution loops through the given list of numbers once.
+The loop maintains a Hash Map that is used to tell whether a certain number exists in the given list of numbers.
+Note that inserting and accessing elements in a Hash Map only requires <strong>O(1)</strong> time.
+</p>
+<h3>Pseudocode</h3>
+<pre><code>------------------------------------------
+Input: numbers (a list), target (a number)
+------------------------------------------
+
+number_hash_map = new hash map
+
+for i = 0, 1, 2, ..., length of numbers - 1
+    current_number = numbers[i]
+    number_needed = target - current_number
+    if number_hash_map is true
+        return (current_number, number_needed)
+    set value at key current_number of number_hash_map to true
+
+return null <span class="code-comment">(since no pair exists)</span></code></pre>
+
+<h3>JavaScript Solution</h3>
+<pre><code>function twoSum(numbers, target) {
+
+    var numExists = {};
+
+    for (let i = 0; i &lt; numbers.length; i++) {
+        let currNum = numbers[i],
+            numNeeded = target - currNum;
+        if (numExists[numNeeded]) {
+            return [currNum, numNeeded];
+        }
+        numExists[currNum] = true;
+    }
+
+    return null; <span class="code-comment">// No pair found.</code>
+}</code></pre>
+
+</div>
+</section>
+
+
+<footer class="e-block">
+<div class="e-row">
+<div class="e-col-1">
+<p>
+Found an issue or got suggestions?
+Please let me know on <a href="https://twitter.com/IAmNimJay" target="_blank">Twitter</a> or <a href="https://github.com/NimJay" target="_blank">GitHub</a>.
+</p>
+</div>
+</div>
+</footer>
+
+</main>
+</body>
