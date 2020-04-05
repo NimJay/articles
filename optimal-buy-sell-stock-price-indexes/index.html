@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="../favicon.png" type="image/png">
+	<link rel="icon" href="../favicon.png" type="image/png">
+
+	<title>Optimal Buy-Sell Stock Price Indexes</title>
+	<link rel="stylesheet" href="../css/easy.css" />
+	<link rel="stylesheet" href="../css/easy-theme-default.css" />
+	<style type="text/css">
+		footer {
+			font-size: 14px;
+			margin-top: 50px;
+			padding-bottom: 15px;
+			background-color: black;
+			color: white;
+		}
+		footer a {
+			color: rgb(120, 255, 150);
+		}
+	</style>
+</head>
+<body>
+<main>
+
+
+<header class="e-block e-row">
+<div class="e-col-1">
+<h1>Optimal Buy-Sell Stock Price Indexes</h1>
+</div>
+</header>
+
+
+<section class="e-block e-row">
+<div class="e-col-1">
+
+<h2>The Problem</h2>
+<p>
+Given a list of stock prices, figure out the optimal time to buy and sell (i.e. maximize your profit).
+<ul>
+	<li>Index i of the given list contains stock price of day i.</li>
+	<li>You must buy once and sell once.</li>
+	<li>You must buy before you sell.</li>
+	<li>Each stock price is just a number.</li>
+	<li>Return the buying index, and the selling index (e.g. <code>[2, 4]</code>).</li>
+</ul>
+</p>
+
+
+<h2>Examples</h2>
+<p>Here are some test cases you can try out as input:</p>
+<table style="text-align: center;" cellspacing=0>
+<thead>
+<tr>
+	<th>Input</th>
+	<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>[ 2, 10, 1, 5 ]</code></td>
+	<td><code>[0, 1]</code></td>
+</tr>
+<tr>
+	<td><code>[ 1, 5, 2, 10 ]</code></td>
+	<td><code>[2, 3]</code></td>
+</tr>
+<tr>
+	<td><code>[ 3, 2, 1 ]</code></td>
+	<td><code>[0, 0]</code>, <code>[1, 1]</code>, or <code>[2, 2]</code> (i.e. buy and sell on the same day)</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>Solution</h2>
+<p>
+The solution presented in this article has a runtime complexity of <strong>O(n)</strong> and a space complexity of <strong>O(1)</strong>.
+Of course, there are many other solutions that are just as good.
+</p>
+<p>This solution goes through the list in reverse order, keeping track of 3 things:</p>
+<ul>
+	<li>the optimal buying index</li>
+	<li>the optimal selling index</li>
+	<li>the maximum stock price</li>
+</ul>
+<p>Once finished, the optimal buying and selling indexes are returned.</p>
+<h3>Pseudocode</h3>
+<pre><code>Input: prices (list of numbers)
+
+    optimal_min_index = last index of prices
+    optimal_max_index = last index of prices
+    max_after_current_index = last index of prices
+
+    for index = last index of prices, ... 2, 1, 0
+        current_price = prices[index]
+
+        if current_price > max_after_current_index
+            max_after_current_index = index
+
+        current_profit = prices[max_after_current_index] - current_price
+        if (current_profit > prices[optimal_max_index] - prices[optimal_min_index])
+            optimal_min_index = index
+            optimal_max_index = max_after_current_index
+
+    return [ optimal_min_index, optimal_max_index ]</code></pre>
+
+<h3>JavaScript Solution</h3>
+<pre><code>function getOptimalBuySellIndexes(prices) {
+
+    let optMinIndex = prices.length - 1,
+        optMaxIndex = prices.length - 1,
+        maxAfterCurrIndex = prices.length - 1;
+
+    <span class="e-code-comment">// Go through prices in reverse order...</span>
+    for (let i = prices.length - 1; i >= 0; i--) {
+        let curr = prices[i];
+
+        <span class="e-code-comment">// Highest we've seen so far?</span>
+        if (curr > prices[maxAfterCurrIndex]) {
+            maxAfterCurrIndex = i;
+        }
+
+        <span class="e-code-comment">// Will buying at the current index provide a better profit?</span>
+        let currProfit = prices[maxAfterCurrIndex] - prices[i];
+        if (currProfit > prices[optMaxIndex] - prices[optMinIndex]) {
+            optMinIndex = i;
+            optMaxIndex = maxAfterCurrIndex;
+        }
+    }
+
+    return [ optMinIndex, optMaxIndex ];
+}</code></pre>
+
+</div>
+</section>
+
+
+<footer class="e-block">
+<div class="e-row">
+<div class="e-col-1">
+<p>
+Found an issue or got suggestions?
+Please let me know on <a href="https://twitter.com/IAmNimJay" target="_blank">Twitter</a> or <a href="https://github.com/NimJay" target="_blank">GitHub</a>.
+</p>
+</div>
+</div>
+</footer>
+
+</main>
+</body>
