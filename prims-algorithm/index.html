@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+
+	<!-- Mobile Browser Toolbar Color -->
+	<!-- Chrome, Firefox OS and Opera --><meta name="theme-color" content="#b5abfd">
+	<!-- Windows Phone --><meta name="msapplication-navbutton-color" content="#b5abfd">
+	<!-- iOS Safari --><meta name="apple-mobile-web-app-status-bar-style" content="#b5abfd">
+
+	<!-- favicon.png -->
+	<link rel="shortcut icon" href="../favicon.png" type="image/png">
+	<link rel="icon" href="../favicon.png" type="image/png">
+
+	<title>Prim's Algorithm</title>
+	<meta name="description" content="Prim's algorithm finds a minimum spanning tree of a given graph.">
+	<meta name="author" content="Nim Jayawardena">
+
+	<link rel="stylesheet" href="../css/easy.css" />
+	<link rel="stylesheet" href="../css/easy-theme-default.css" />
+	<style type="text/css">
+		body {
+			font-family: Roboto, Arial, Helvetica, sans-serif;
+			font-size: 18px;
+			line-height: 1.8em;
+			background-color: white;
+		}
+		pre {
+			font-size: 14px;
+			line-height: 1.5em;
+		}
+		h1, h2, h3 {
+			display: inline-block;
+		}
+		h1 { font-size: 30px; }
+		footer {
+			font-size: 14px;
+			margin-top: 50px;
+			padding-bottom: 15px;
+			background-color: black;
+			color: white;
+		}
+		footer a {
+			color: white;
+		}
+		code .code-comment {
+			color: rgb(120, 170, 255);
+		}
+		img {
+			display: block;
+		}
+		.vertex {
+			margin: 4px 0;
+			background-color: #3dce83;
+			display: inline-block;
+			padding: 3px 4px;
+			border-radius: 100%;
+			width: 37px;
+			text-align: center;
+			font-weight: bold;
+			color: rgba(0, 0, 0, 0.5);
+			text-shadow: -1px 1px rgba(255, 255, 255, 0.3);
+			box-shadow: -1px 2px 10px rgba(0, 0, 0, 0.1);
+		}
+	</style>
+</head>
+<body>
+<main>
+
+<div class="e-block e-row">
+<div class="e-col-1">
+<h1>Prim's Algorithm</h1>
+<p>Prim's algorithm finds a <a href="../minimum-spanning-tree/index.html">minimum spanning tree</a> of a graph.</p>
+<p>In other words, Prim's algorithm outputs a subset of edges (of a given graph) such that:</p>
+<ul>
+	<li>the total edge weight is minimized (minimum)</li>
+	<li>all vertices are includes (spanning)</li>
+	<li>there is <em>exactly</em> one path between any pair of vertices (tree)</li>
+</ul>
+</div>
+</div>
+
+<div style="display: flex;justify-content: space-around;flex-wrap: wrap;padding: 0px 10px;">
+<img src="img/graph-to-minimum-spanning-tree.png" style="width: 100%;max-width: 1200px;margin-top: 60px;" alt="A graph.">
+</div>
+
+<div class="e-block e-row" style="margin-top: 40px;">
+<div class="e-col-1">
+<h2>How Prim's Algorithm Works</h2>
+<p>
+Prim's algorithm starts with an empty set of vertices and edges.
+It gradually builds the minimum spanning tree by gobbling up one edge and one vertex at a time.
+</p>
+<ol>
+	<li><strong>Pick a random vertex.</strong> Add it to the set of vertices.</li>
+	<li>
+		Out of the edges connecting a chosen vertex to an unchosen vertex, <strong>find the edge with the minimum weight.</strong>
+		We add that edge and its connecting unchosen vertex to the tree.
+	</li>
+	<li><strong>Repeat 2</strong> until all vertices are included in the tree.</li>
+</ol>
+<h3>Greedy Algorithm</h3>
+<p>Prim's algorithm is a greedy algorithm. This is because it repeatedly makes a greedy decision (at step 2).</p>
+
+<h2>Monster Analogy</h2>
+<p>
+I like to think of Prim's algorithm as a gassy monster that wants to eat all the vertices.
+And it does so by spreading its toxic gas from one vertex to another, making sure it spends as less gas as possible.
+</p>
+</div>
+</div>
+
+<div style="display: flex;justify-content: space-around;flex-wrap: wrap;padding: 0px 10px;">
+<img src="img/gassy-monster.png" style="margin-top: 30px;max-width: 100%;" alt="A purple monster spreading its toxic gas from one vertex to another vertex.">
+</div>
+
+<div class="e-block e-row" style="margin-top: 0px;">
+<div class="e-col-1">
+<h2>Example Walkthrough</h2>
+<p>Let's walk through an example.</p>
+<p>We'll use the Prim's algorithm to find a minimum spanning tree of the graph below.</p>
+<img src="img/prims-algorithm-1.png" style="margin: 30px auto;width: 70%;" alt="">
+<p>First, pick any vertex. Let's pick <span class="vertex">A</span>.</p>
+<img src="img/prims-algorithm-2.png" style="margin: 30px auto;width: 70%;" alt="">
+<p>
+Now, take a look at the edges connecting our chosen vertices (<span class="vertex">A</span>) to unchosen vertices:
+</p>
+<ul>
+	<li>the edge from <span class="vertex">A</span> to <span class="vertex">B</span> of weight 1</li>
+	<li>the edge from <span class="vertex">A</span> to <span class="vertex">C</span> of weight 2</li>
+</ul>
+<p>
+Out of these edges, we pick the one with minimum weight.
+<br/>
+So let's pick the edge of weight 1 (<span class="vertex">A</span> to <span class="vertex">B</span>).
+</p>
+<img src="img/prims-algorithm-3.png" style="margin: 30px auto;width: 70%;" alt="">
+<p>
+Now we choose between three edges:
+</p>
+<ul>
+	<li>the edge from <span class="vertex">A</span> to <span class="vertex">C</span> of weight 2</li>
+	<li>the edge from <span class="vertex">B</span> to <span class="vertex">C</span> of weight 1</li>
+	<li>the edge from <span class="vertex">B</span> to <span class="vertex">D</span> of weight 3</li>
+</ul>
+<p>
+The minimum weight is 1 &mdash; on the edge from <span class="vertex">B</span> to <span class="vertex">C</span>.
+<br/>
+So let's gobble up that edge and vertex <span class="vertex">C</span>.
+</p>
+<img src="img/prims-algorithm-4.png" style="margin: 30px auto;width: 70%;" alt="">
+<p>
+At this point, we no longer care about the edge from <span class="vertex">A</span> to <span class="vertex">C</span>.
+This is because we've already collected vertices <span class="vertex">A</span> and <span class="vertex">C</span>.
+<br/>
+So we will decide between:
+</p>
+<ul>
+	<li>the edge from <span class="vertex">B</span> to <span class="vertex">D</span> of weight 3</li>
+	<li>the edge from <span class="vertex">C</span> to <span class="vertex">E</span> of weight 3</li>
+</ul>
+<p>
+But we have a tie! Both edges have a weight of 3.
+</p>
+<p>
+When there is a tie for the minimum weight, we can pick any of the edges in the tie.
+Let's go with the edge from <span class="vertex">B</span> to <span class="vertex">D</span> of weight 3.
+</p>
+<img src="img/prims-algorithm-5.png" style="margin: 30px auto;width: 70%;" alt="">
+<p>Let's keep going...</p>
+<p>
+There are three edges to choose from with weights 1, 3, and 5.
+The edge from <span class="vertex">D</span> to <span class="vertex">F</span> of weight 1 is the winner.</p>
+<img src="img/prims-algorithm-6.png" style="margin: 30px auto;width: 70%;" alt="">
+<p>... and we keep going ...</p>
+<p>We pick the edge from <span class="vertex">F</span> to <span class="vertex">E</span> of weight 2.</p>
+<img src="img/prims-algorithm-7.png" style="margin: 30px auto;width: 70%;" alt="">
+<p>Finally, we've collected all the vertices! Thus, we have our minimum spanning tree.</p>
+<img src="img/prims-algorithm-8.png" style="margin: 30px auto;width: 70%;" alt="">
+</div>
+</div>
+
+<footer class="e-block">
+<div class="e-row">
+<div class="e-col-1">
+<p>
+Found an issue or got suggestions?
+Please let me know on <a href="https://twitter.com/IAmNimJay" target="_blank">Twitter</a> or <a href="https://github.com/NimJay/articles" target="_blank">GitHub</a>.
+</p>
+</div>
+</div>
+</footer>
+
+</main>
+</body>
+</html>
