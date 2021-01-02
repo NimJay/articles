@@ -1,0 +1,23 @@
+h1 {
+    font-size: 45px;
+}
+h1, h2 {
+    text-align: center;
+}
+.em-row {
+    max-width: 650px;
+}
+img {
+    margin-top: 10px;
+    opacity: 0.8;
+}
+p, ul {
+    margin-top: 30px;
+}
+section {
+    padding-bottom: 70px;
+}
+aside {
+    padding: 50px 0;
+    border-top: solid 1px rgba(0, 0, 0, 0.1);
+}
